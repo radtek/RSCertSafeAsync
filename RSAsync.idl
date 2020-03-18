@@ -1,0 +1,58 @@
+// RSAsync.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (RSAsync.tlb) that will become a resource in
+// RSAsync.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(7eeb6853-eb79-4e03-ada7-b56086b2f0e1), version(1.0),
+  control ]
+library RSAsyncLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CRSAsyncCtrl
+	[ 
+		uuid(1b5c5acc-ba09-4ee3-9ce1-87759757e3df)
+	]
+	dispinterface _DRSAsync
+	{
+		properties:
+			[id(DISPID_READYSTATE), readonly] long ReadyState;
+		methods:
+			[id(1)] VARIANT_BOOL TestEvent(USHORT index);
+	};
+
+	//  Event dispatch interface for CRSAsyncCtrl
+
+	[ 
+		uuid(ab96f9fe-c00b-4d1e-bb9c-b6933dc32f4f)
+	]
+	dispinterface _DRSAsyncEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			[id(DISPID_READYSTATECHANGE)] void ReadyStateChange();
+			[id(1)] void RS_CloudSealAuthEvent(BSTR authResult, BSTR transid, BSTR token, BSTR msg);
+			[id(2)] void RS_CloudGetSignResultEvent(BSTR signResult, BSTR signdMsg, BSTR transid, BSTR signdCert, BSTR msg);
+			[id(3)] void RS_CloudLoginAuthEvent(BSTR authResult, BSTR transid, BSTR token, BSTR mobile, BSTR userName, BSTR userID, BSTR msg);
+			[id(4)] void RS_CloudEncAuthEvent(BSTR authResult, BSTR transid, BSTR token, BSTR msg);
+			[id(5)] void RS_CloudDevAuthEvent(BSTR authResult, BSTR transid, BSTR token, BSTR msg);
+			[id(6)] void RS_CloudGetCertAuthEvent(BSTR authResult, BSTR transid, BSTR token, BSTR msg);
+	};
+
+	//  Class information for CRSAsyncCtrl
+	[
+		uuid(a5104978-463b-4d42-b430-061414e11f2f)
+	]
+	coclass RSAsync
+	{
+		[default] dispinterface _DRSAsync;
+		[default, source] dispinterface _DRSAsyncEvents;
+	};
+
+};
