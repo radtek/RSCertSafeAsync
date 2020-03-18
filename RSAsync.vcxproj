@@ -78,7 +78,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <TargetExt>.ocx</TargetExt>
-    <OutDir>..\bin\</OutDir>
+    <OutDir>.\bin\</OutDir>
     <IntDir>obj\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)d</TargetName>
   </PropertyGroup>
