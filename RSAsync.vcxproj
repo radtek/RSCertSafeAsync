@@ -89,7 +89,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <TargetExt>.ocx</TargetExt>
-    <OutDir>..\bin\</OutDir>
+    <OutDir>.\bin\</OutDir>
     <IntDir>obj\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -110,7 +110,7 @@
       <SubSystem>Windows</SubSystem>
       <ModuleDefinitionFile>.\RSAsync.def</ModuleDefinitionFile>
       <OutputFile>$(OutDir)$(ProjectName)d.ocx</OutputFile>
-      <RegisterOutput>true</RegisterOutput>
+      <RegisterOutput>false</RegisterOutput>
       <AdditionalLibraryDirectories>..\lib;..\lib\libpoco</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>comsuppw.lib</AdditionalDependencies>
@@ -174,7 +174,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <ModuleDefinitionFile>.\RSAsync.def</ModuleDefinitionFile>
       <OutputFile>$(OutDir)$(ProjectName).ocx</OutputFile>
-      <RegisterOutput>true</RegisterOutput>
+      <RegisterOutput>false</RegisterOutput>
       <AdditionalLibraryDirectories>..\lib;..\lib\libpoco</AdditionalLibraryDirectories>
       <AdditionalDependencies>comsuppw.lib</AdditionalDependencies>
     </Link>
