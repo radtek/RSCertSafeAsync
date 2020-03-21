@@ -21,6 +21,25 @@
 #define VTSPRODUCTVERSION			WMAIN,WMajor,WMinor,WFileIndex
 #define VTSPRODUCTVERSION_STR		STRINGIZE(WMAIN) "." STRINGIZE(WMajor) "." STRINGIZE(WMinor) "." STRINGIZE(WFileIndex)
 
+#define STRINGIZE2(s)		#s
+#define STRINGIZE(s)        STRINGIZE2(s)
+
+#define MAIN				1 
+#define Major				0 
+#define Minor				0 
+#define FileIndex			2
+
+#define VTSFILEVERSION			MAIN,Major,Minor,FileIndex
+#define VTSFILEVERSION_STR		STRINGIZE(MAIN) "." STRINGIZE(Major) "." STRINGIZE(Minor) "." STRINGIZE(FileIndex)
+
+#define WMAIN				2 
+#define WMajor				0 
+#define WMinor				6 
+#define WFileIndex			79
+
+#define VTSPRODUCTVERSION			WMAIN,WMajor,WMinor,WFileIndex
+#define VTSPRODUCTVERSION_STR		STRINGIZE(WMAIN) "." STRINGIZE(WMajor) "." STRINGIZE(WMinor) "." STRINGIZE(WFileIndex)
+
 #define IDS_MFCACTIVEXDEMO               1
 #define IDS_MFCACTIVEXDEMO_PPG           2
 
